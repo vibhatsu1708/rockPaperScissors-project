@@ -30,7 +30,7 @@ function computerWin (userChoice, computerChoice) {
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${movePlayed(userChoice)} beats ${movePlayed(computerChoice)}`;
+    result_p.innerHTML = `${movePlayed(computerChoice)} beats ${movePlayed(userChoice)}`;
 }
 function draw (userChoice, computerChoice) {
     result_p.innerHTML = "Draw"
