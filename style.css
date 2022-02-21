@@ -54,6 +54,17 @@ header > h1 {
     right: -30px;
 }
 
+.winner {
+    font-size: 30px;
+    color: white;
+}
+
+.winner > p {
+    text-align: center;
+    font-weight: bold;
+    font-family: Asap, sans-serif;
+}
+
 .result {
     font-size: 40px;
     color: white;
