@@ -2,6 +2,14 @@ const rockButton = document.querySelector('#rock-button');
 const paperButton = document.querySelector('#paper-button');
 const scissorsButton = document.querySelector('#scissors-button');
 
+let scoreScreenText = document.getElementById('score-screen-text');
+let playerHeaderScore = document.getElementById('player-header-score');
+let computerHeaderScore = document.getElementById('computer-header-score');
+scoreScreenText.textContent = "can you beat the computer?";
+playerHeaderScore.textContent = "0";
+computerHeaderScore.textContent = "0";
+
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -10,7 +18,7 @@ function getComputerChoice () {
     let choices = ["r", "p", "s"];
     let choicesLength = choices.length;
     let movePlayed = choices[Math.floor(Math.random() * choicesLength)];
-    return movePlayed
+    return movePlayed;
 }
 
 // A single round of game played between the user and the computer
@@ -23,35 +31,41 @@ function playRound (playerSelection, computerSelection) {
         case "rr":
         case "pp":
         case "ss":
-            return "Tie";
+            scoreScreenText.textContent = "Tie";
             break;
 
         // Player wins
         case "rs":
             playerScore += 1;
-            return "You win, Rock beats Scissors";
+            playerHeaderScore.textContent = playerScore;
+            scoreScreenText.textContent = "You win, Rock beats Scissors";
             break;
         case "pr":
             playerScore += 1;
-            return "You win, Paper beats Rock";
+            playerHeaderScore.textContent = playerScore;
+            scoreScreenText.textContent = "You win, Paper beats Rock";
             break;
         case "sp":
             playerScore += 1;
-            return "You win, Scissors beats Paper";
+            playerHeaderScore.textContent = playerScore;
+            scoreScreenText.textContent = "You win, Scissors beats Paper";
             break;
 
         // Computer Wins
         case "sr":
             computerScore += 1;
-            return "You lose, Rock beats Scissors";
+            computerHeaderScore.textContent = computerScore;
+            scoreScreenText.textContent = "You lose, Rock beats Scissors";
             break;
         case "rp":
             computerScore += 1;
-            return "You lose, Paper beats Rock";
+            computerHeaderScore.textContent = computerScore;
+            scoreScreenText.textContent = "You lose, Paper beats Rock";
             break;
         case "ps":
             computerScore += 1;
-            return "You lose, Scissors beats Paper";
+            computerHeaderScore.textContent = computerScore;
+            scoreScreenText.textContent = "You lose, Scissors beats Paper";
             break;
     }
 }
@@ -82,7 +96,3 @@ scissorsButton.addEventListener(
         playRound(playerSelection, computerSelection);
     }
 )
-
-document.getElementById('score-screen').textContent = "can you beat the computer";
-document.getElementById('player-header-score').textContent = playerScore;
-document.getElementById('computer-header-score').textContent = computerScore;
