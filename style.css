@@ -21,7 +21,7 @@ body {
     text-transform: uppercase;
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 100px;
+    margin-bottom: 10vh;
     background-color: #F4B860;
     color: #32373B;
     width: 100%;
@@ -30,21 +30,20 @@ body {
 
 .score-board {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     width: 30%;
+    gap: 60px;
     margin: 0 auto;
     flex-direction: row;
-    margin-bottom: 50px;
+    margin-bottom: 10vh;
 }
 
-.score-screen > p {
+#score-screen-text {
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-bottom: 10vh;
     text-transform: uppercase;
     font-weight: 200;
-}
-.score-screen-text {
-    text-transform: uppercase;
 }
 .player-score, .computer-score {
     text-align: center;
@@ -83,4 +82,29 @@ body {
     padding: 10px 20px;
     border-radius: 10000px;
     cursor: pointer;
+}
+
+/* media queries for responsive design */
+@media only screen and (max-width: 750px){
+    .header {
+        font-size: 2rem;
+        margin-bottom: 5vh;
+    }
+    .score-board {
+        gap: 20px;
+        margin-bottom: 5vh;
+    }
+    .score-screen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #score-screen-text {
+        font-size: 1.7rem;
+        margin-bottom: 5vh;
+        text-align: center;
+    }
 }
